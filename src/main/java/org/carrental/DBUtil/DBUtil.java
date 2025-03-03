@@ -9,7 +9,12 @@ public class DBUtil {
     private final static String USER_NAME = "root";
     private final static String Password = "manager";
 
-    public static Connection getconnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER_NAME, Password);
+    public static Connection getConnection() throws SQLException {
+        try {
+            return DriverManager.getConnection(URL, USER_NAME, Password);
+        } catch (SQLException e) {
+            System.err.println("❌ Database Connection Failed: " + e.getMessage());
+            return null;
+        }
     }
 }
