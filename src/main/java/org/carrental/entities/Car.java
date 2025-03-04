@@ -1,31 +1,30 @@
 package org.carrental.entities;
 
-
 public class Car {
     private int id;
     private String model;
     private String brand;
     private int year;
-    private Long pricePerDay;
-    private boolean available;
+    private double rentalPrice;
+    private boolean isAvailable;
 
     // Constructor for fetching from DB
-    public Car(int id, String model, String brand, int year, Long pricePerDay, boolean available) {
+    public Car(int id, String model, String brand, int year, double rentalPrice, boolean isAvailable) {
         this.id = id;
         this.model = model;
         this.brand = brand;
         this.year = year;
-        this.pricePerDay = pricePerDay;
-        this.available = available;
+        this.rentalPrice = rentalPrice;
+        this.isAvailable = isAvailable;
     }
 
     // Constructor for adding a new car
-    public Car(String model, String brand, int year, Long pricePerDay, boolean available) {
+    public Car(String model, String brand, int year, double rentalPrice, boolean isAvailable) {
         this.model = model;
         this.brand = brand;
         this.year = year;
-        this.pricePerDay = pricePerDay;
-        this.available = available;
+        this.rentalPrice = rentalPrice;
+        this.isAvailable = isAvailable;
     }
 
     public int getId() {
@@ -60,20 +59,20 @@ public class Car {
         this.year = year;
     }
 
-    public Long getPricePerDay() {
-        return pricePerDay;
+    public double getRentalPrice() {
+        return rentalPrice;
     }
 
-    public void setPricePerDay(Long pricePerDay) {
-        this.pricePerDay = pricePerDay;
+    public void setRentalPrice(double rentalPrice) {
+        this.rentalPrice = rentalPrice;
     }
 
     public boolean isAvailable() {
-        return available;
+        return isAvailable;
     }
 
     public void setAvailable(boolean available) {
-        this.available = available;
+        isAvailable = available;
     }
 
     @Override
@@ -83,8 +82,8 @@ public class Car {
                 ", model='" + model + '\'' +
                 ", brand='" + brand + '\'' +
                 ", year=" + year +
-                ", pricePerDay=" + pricePerDay +
-                ", available=" + available +
+                ", rentalPrice=" + rentalPrice +
+                ", isAvailable=" + isAvailable +
                 '}';
     }
 }

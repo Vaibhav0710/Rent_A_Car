@@ -47,7 +47,7 @@ public class LoginService {
         String phone = scanner.nextLine();
 
         System.out.print("Enter your Password: ");
-        String password = scanner.nextLine(); // ⚠️ Store securely in real projects!
+        String password = scanner.nextLine();
 
         boolean isRegistered = customerDAO.registerCustomer(name, email, phone, password);
 
